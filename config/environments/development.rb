@@ -29,10 +29,22 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
+  config.action_mailer.default_url_options = { host: 'localhost' }
 
+# Email Settings For Development using mailcatcher
+  config.action_mailer.delivery_method = :smtp
+  #This should be a front_end url
+
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.mail.yahoo.com',
+  port:                 587,
+  domain:               'example.com',
+  user_name:            ENV['YAHOO_USERNAME'],
+  password:             ENV['YAHOO_PASSWORD'],
+  authentication:       'plain',
+  enable_starttls_auto: true }
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.

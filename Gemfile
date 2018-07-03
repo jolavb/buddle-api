@@ -22,8 +22,6 @@ gem 'puma', '~> 3.11'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'fillable-pdf'
-
 gem 'devise_token_auth'
 
 gem 'rack-cors', :require => 'rack/cors'

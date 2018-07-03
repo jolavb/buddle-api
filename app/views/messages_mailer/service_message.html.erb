@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style>
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+      }
+
+    </style>
+    
+  </head>
+  <body>
+    <h1>Buddle Service Inquiry</h1>
+
+    <table>
+    <tr>
+        <th>Name: </td>
+        <td> <%= @name %> </td>
+    </tr>
+    <tr>
+        <th> Email: </th>
+        <td> <%= @email %> </td>
+    </tr>
+    <tr>
+        <th>Organization: </th>
+        <td><%= @org %> </td>
+    </tr>
+
+    <tr>
+        <th> Inquiry Type:  </th>
+        <td><%= @service %> </td>
+    </tr>
+    
+</table>
+
+    <p>
+     <%= @message %>
+    </p>
+
+  </body>
+</html>

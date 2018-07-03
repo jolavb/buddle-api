@@ -29,7 +29,9 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
-  config.action_mailer.default_url_options = { host: 'localhost' }
+
+  #default URL for mailer redirect
+  config.action_mailer.default_url_options = { host: 'localhost:8080' }
 
 # Email Settings For Development using mailcatcher
   config.action_mailer.delivery_method = :smtp

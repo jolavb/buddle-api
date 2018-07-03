@@ -54,9 +54,27 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "buddle-api_#{Rails.env}"
 
-  config.action_mailer.default_url_options = { host: 'https://buddlelaw/', port: 3000 }
+  #default URL for mailer redirect
+  config.action_mailer.default_url_options = { host: 'localhost:8080' }
 
+# Email Settings For Development using mailcatcher
+  config.action_mailer.delivery_method = :smtp
+  #This should be a front_end url
+
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.mail.yahoo.com',
+  port:                 587,
+  domain:               'example.com',
+  user_name:            ENV['YAHOO_USERNAME'],
+  password:             ENV['YAHOO_PASSWORD'],
+  authentication:       'plain',
+  enable_starttls_auto: true }
+
+  
   config.action_mailer.perform_caching = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_caching = false
+
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
